@@ -6,6 +6,10 @@
 //$username = 'appmasuser';
 //$password = 'Myapp11!';
 
+$host='localhost';
+$db = 'maspost';
+$username = 'appmasuser';
+$password = 'Myapp11!';
 
 $dsn= "mysql:host=$host;dbname=$db;charset=utf8";
 
