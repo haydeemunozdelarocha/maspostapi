@@ -1,0 +1,14 @@
+{
+  "require": {
+    "slim/slim-skeleton": "^3.1",
+    "ext-json": "^1.6",
+    "ircmaxell/password-compat": "^1.0",
+    "phpmailer/phpmailer": "^6.0",
+    "google/cloud-vision": "^0.24.0",
+    "dsiddharth2/php-zxing": "^1.0"
+  },
+  "require-dev": {
+    "codeception/codeception": "^3.1",
+    "codeception/base": "^3.1"
+  }
+}
