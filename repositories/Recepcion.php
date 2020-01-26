@@ -1,6 +1,6 @@
 <?php
 namespace MaspostAPI\Repositories;
-require_once(__DIR__.'/../new_database.php');
+require_once(__DIR__.'/../database.php');
 use DB;
 
 class Recepcion
@@ -8,37 +8,48 @@ class Recepcion
     /**
      * Get All Recepcion
      *
-     * @param $pmb
-     * @param $status
-     * @param $date
+     * @param $queryData Array
      *
      * @return Array
      */
-    public static function getAllRecepcionQuery($pmb, $status = 'en_bodega', $date = '')
+    public static function getAllRecepcionQuery($queryData)
     {
         $db = new DB();
         $db = $db->getConnection();
         $dateQuery = '';
-        $dateArray = explode("/", $date);
-
-        if (!empty($dateArray[0]) && !empty($dateArray[1])) {
-            $dateQuery = 'AND YEAR(fecha_entrega) = '.$dateArray[1].' AND MONTH(fecha_entrega) = '. $dateArray[0]. ' ';
-        }
-
-        $statusQuery = $status === 'en_bodega' ? 'where fecha_entrega IS NULL AND id_salida = 0 ' : 'where fecha_entrega IS NOT NULL ';
-
         $deliveryColumn = '';
         $pickupPerson = '';
         $joinPickupTable = '';
+        $pickUpDateColumn = '';
+        $orderByDate= '';
 
-        if ($status === 'entregado') {
-            $deliveryColumn = 'recepcion.id_salida as `# Salida`,';
+        if ($queryData['status'] === 'en_bodega') {
+            $statusQuery = 'where fecha_entrega IS NULL AND id_salida = 0 ';
+            $orderByDate = 'fecha_recepcion DESC';
+        } else {
+            if (isset($queryData['month']) || isset($queryData['year'])) {
+                if (!empty($queryData['month'])) {
+                    $dateQuery .= ' AND DATE_FORMAT(fecha_entrega, "%m") = '. $queryData['month']. ' ';
+                }
+//
+                if (!empty($queryData['month'])) {
+                    $dateQuery .= 'AND DATE_FORMAT(fecha_entrega, "%Y") = '.$queryData['year'].' ';
+                }
+            } else {
+                $deliveryColumn = 'recepcion.id_salida as `# Salida`,';
+                $pickUpDateColumn = ' '.self::formatDate('fecha_entrega', 'fecha_entrega').',';
+                $dateQuery = ' AND DATE_FORMAT(fecha_entrega, "%Y-%m-%d %H:%i:%s") BETWEEN DATE_ADD(NOW(), INTERVAL -11 MONTH) AND NOW() ';
+            }
+
             $pickupPerson = ',salidas.entrego as `Recibió`';
-            $joinPickupTable = 'join salidas on recepcion.id_salida = salidas.id ';
+            $orderByDate = 'fecha_entrega DESC';
+            $statusQuery = 'where fecha_entrega IS NOT NULL AND id_salida IS NOT NULL ';
         }
 
-        $columns = self::formatDeliveryDate().', recepcion.entrada as ID,'.$deliveryColumn.' tipo_entradas.nombre AS tipo, recepcion.fromm as `remitente`, recepcion.nombre as `destinatario`,fleteras.nombre AS fletera, '. self::truncatedTrackingNumber().'  as `tracking`,recepcion.peso as `peso(lbs)`, CONCAT("$", recepcion.cod) as `COD`'.$pickupPerson;
-        $query = 'select '.$columns.'from recepcion join tipo_entradas on recepcion.tipo = tipo_entradas.id join fleteras on recepcion.fletera = fleteras.id '.$joinPickupTable.$statusQuery.$dateQuery.' AND recepcion.pmb = ' . $pmb . ' ORDER BY recepcion.fecha_recepcion DESC';
+        $columns = self::formatDate('recepcion.fecha_recepcion', 'fecha_recepcion').', recepcion.entrada as ID,'.$deliveryColumn.$pickUpDateColumn.' tipo_entradas.nombre AS tipo, recepcion.fromm as `remitente`, recepcion.nombre as `destinatario`,fleteras.nombre AS fletera, '. self::truncatedTrackingNumber().'  as `tracking`,recepcion.peso as `peso(lbs)`, CONCAT("$", recepcion.cod) as `COD`'.$pickupPerson;
+        $query = 'select '.$columns.'from recepcion join tipo_entradas on recepcion.tipo = tipo_entradas.id join fleteras on recepcion.fletera = fleteras.id left join salidas on recepcion.id_salida = salidas.id '.$statusQuery.$dateQuery.' AND recepcion.pmb = ' . $queryData['pmb'] . ' ORDER BY '.$orderByDate;
+        //return json_encode($query);
+
         $result = $db->query($query);
         $data = [];
 
@@ -108,8 +119,8 @@ class Recepcion
         }
     }
 
-    public static function formatDeliveryDate() {
-        return '(concat(DATE_FORMAT(recepcion.fecha_recepcion,"%d"),"-",ELT(DATE_FORMAT(recepcion.fecha_recepcion,"%m"),"Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"),"-",DATE_FORMAT(recepcion.fecha_recepcion,"%y"))) AS fecha_recepcion';
+    public static function formatDate($date, $name) {
+        return '(concat(DATE_FORMAT('.$date.',"%d"),"-",ELT(DATE_FORMAT('.$date.',"%m"),"Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"),"-",DATE_FORMAT('.$date.',"%y"))) AS '.$name;
     }
 
     public static function truncatedTrackingNumber() {

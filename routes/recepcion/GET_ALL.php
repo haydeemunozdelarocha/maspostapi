@@ -18,24 +18,30 @@ class GET_ALL extends ENDPOINT
     protected function execute(Request $request, Response $response, array &$args)
     {
         $params = $request->getQueryParams();
-        $status = '';
-        $date = '';
+        $queryData = [];
 
         if (!isset($params['pmb']) ||
             empty($params['pmb'])) {
-            return $response->withStatus(400);
+            return $response->withStatus(400, 'Invalid PMB');
         }
+
+        $queryData['pmb'] = $params['pmb'];
 
         if (isset($params['status']) &&
             !empty($params['pmb'])) {
-            $status = $params['status'];
+            $queryData['status'] = $params['status'];
         }
 
-        if (isset($params['date']) &&
-            !empty($params['date'])) {
-            $date = $params['date'];
+        if (isset($params['month']) &&
+            !empty($params['month'])) {
+            $queryData['month'] = $params['month'];
         }
 
-        return $response->withJson(Recepcion::getAllRecepcionQuery($params['pmb'], $status, $date), 200);
+        if (isset($params['year']) &&
+            !empty($params['year'])) {
+            $queryData['year'] = $params['year'];
+        }
+
+        return $response->withJson(Recepcion::getAllRecepcionQuery($queryData), 200);
     }
 }

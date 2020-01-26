@@ -1,6 +1,6 @@
 <?php
 namespace MaspostAPI\Repositories;
-require_once(__DIR__.'/../new_database.php');
+require_once(__DIR__.'/../database.php');
 use DB;
 
 class AuthorizePickup
