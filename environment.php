@@ -1,5 +1,5 @@
 <?php
-$_ENV["mode"]="development";
+$_ENV["mode"]="production";
 
 if ($_ENV["mode"] === "development") {
     $_ENV["MASPOST_DB_USERNAME"] = getenv("MASPOST_DB_USER_LOCAL");
