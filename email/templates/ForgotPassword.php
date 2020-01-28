@@ -1,5 +1,5 @@
 <?php
-namespace MaspostAPI\Template;
+namespace MaspostAPI;
 
 class ForgotPassword {
     public $body;

@@ -4,8 +4,7 @@ require_once(__DIR__.'/../Endpoint.php');
 require_once(__DIR__.'/../../repositories/Auth.php');
 use MaspostAPI\Routes\ENDPOINT;
 use MaspostAPI\Repositories\Auth;
-use MaspostAPI\Email;
-use MaspostAPI\EmailHelpers;
+use MaspostAPI\Repositories\Clientes;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
@@ -59,7 +58,11 @@ class RESET_PASSWORD extends ENDPOINT
             {
                 if(Auth::setPassword($credentials[0]['id'], $this->data['password']))
                 {
-                    return $response->withStatus(200);
+                    $user = Clientes::getClientInfo($this->data['pmb']);
+
+                    if ($user) {
+                        return $response->withJson($user, 200);
+                    }
                 } else {
                     return $response->withStatus(400)->withJson('Wrong customer id.');
                 }
@@ -67,6 +70,8 @@ class RESET_PASSWORD extends ENDPOINT
             {
                 return $response->withStatus(400)->withJson('This token has expired. Please request a new token to be sent via email.');
             }
+
+            return $response->withStatus(400);
         }
     }
 }

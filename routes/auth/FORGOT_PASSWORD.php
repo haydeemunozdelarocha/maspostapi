@@ -50,7 +50,8 @@ class FORGOT_PASSWORD extends ENDPOINT
 
             if($this->data['token'])
             {
-                $mail = new Email($this->data['pmb'], EmailHelpers::getSubject('forgot_password'), EmailHelpers::getTemplate($this->data, $this->type));
+                $email = Clientes::getClientInfo($this->data['pmb'])['email'];
+                $mail = new Email($email, EmailHelpers::getSubject('forgot_password'), EmailHelpers::getTemplate($this->data, $this->type));
 
                 if(!$mail->send())
                 {
@@ -60,9 +61,9 @@ class FORGOT_PASSWORD extends ENDPOINT
                     return $response->withStatus(200);
                 }
             }
-        } else {
-            return false;
         }
+
+        return $response->withStatus(404);
     }
 }
 

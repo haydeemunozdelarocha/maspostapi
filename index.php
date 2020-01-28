@@ -5,6 +5,7 @@ require_once('routes/recepcion/GET_FLETERAS.php');
 require_once('routes/clientes/GET_PLAN.php');
 require_once('routes/clientes/GET_ALL_RECIBIR.php');
 require_once('routes/clientes/GET_ACCOUNT_BALANCE.php');
+require_once('routes/clientes/GET_ALL_AUTORIZADOS_ENTREGAR.php');
 require_once('routes/captura/TEST.php');
 require_once('routes/emails/SEND.php');
 require_once('routes/express_pickup/CREATE.php');
@@ -41,6 +42,7 @@ $app->group('/clientes', function(){
     $this->get('/info_plan', MaspostAPI\Routes\Clientes\GET_PLAN::class);
     $this->get('/recibir', MaspostAPI\Routes\Clientes\GET_ALL_RECIBIR::class);
     $this->get('/account_balance', MaspostAPI\Routes\Clientes\GET_ACCOUNT_BALANCE::class);
+    $this->get('/autorizados_entrega', MaspostAPI\Routes\Clientes\GET_ALL_AUTORIZADOS_ENTREGAR::class);
 });
 
 $app->group('/auth', function(){

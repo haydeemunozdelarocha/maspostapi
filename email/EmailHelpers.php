@@ -2,6 +2,9 @@
 namespace MaspostAPI;
 require_once(__DIR__.'/templates/ExpressPickup.php');
 require_once(__DIR__.'/templates/ForgotPassword.php');
+require_once(__DIR__.'/../helpers/Helpers.php');
+
+use MaspostAPI\Helpers\Date;
 
 class EmailHelpers {
     function __construct() {
@@ -10,11 +13,16 @@ class EmailHelpers {
     static function getTemplate($data, $type) {
         switch ($type) {
             case "entrega_express":
-                $template = new Template\ExpressPickup($data);
+                $template = new ExpressPickup($data);
+                return $template->getBody();
+                break;
+            case "entrega_express_admin":
+                $isAdmin = true;
+                $template = new ExpressPickup($data, $isAdmin);
                 return $template->getBody();
                 break;
             case "forgot_password":
-                $template = new Template\ForgotPassword($data);
+                $template = new ForgotPassword($data);
                 return $template->getBody();
                 break;
             case "Kuchen":
@@ -23,10 +31,19 @@ class EmailHelpers {
         }
     }
 
-    static function getSubject($type) {
+    static function getSubject($type, $data = []) {
         switch ($type) {
             case "entrega_express":
+                if (Date::isWeekend($data['date'])) {
+                    return "Fin de Semana: Nueva Entrega Express";
+                }
+
                 return "Nueva Entrega Express";
+            case "entrega_express_admin":
+                if (Date::isWeekend($data['date'])) {
+                    return $data['pmb']." - Confirmar: Nueva Entrega Express Fin de Semana";
+                }
+                return $data['pmb']."Nueva Entrega Express";
                 break;
             case "forgot_password":
                 return "Reestablecer Contraseña";

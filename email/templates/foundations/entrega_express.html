@@ -7,16 +7,21 @@
         background-color: #f3f3f3;
     }
 
+    body {
+        padding: 30px;
+    }
+
     header {
         background-color: #ffffff !important;
         width: 100%;
+        margin: -30px -30px -30px 0;
     }
 
     footer {
         background-color: #1c51c6;
         color: #FFF;
         width: 100%;
-        margin: 0;
+        margin: 0 -30px -30px -30px;
         padding: 0;
     }
 </style>
@@ -29,35 +34,13 @@
     </center>
 </header>
 <container>
-    <row>
+    <row style="padding-top:200px;">
         <columns large="12">
             <h1 style="padding-top:20px;">Nueva Entrega Express</h1>
-            <h3>Programada para fin de semana.</h3>
-            <p>Hemos recibido tu solicitud de entrega express. Los fines de
-                semana las entregas se hacen solamente con cita. Nuestro equipo confirmara
-                su disponibilidad para terminar de programar esta entrega. Recibiras un correo
-                con la confirmacion. Gracias!
+            {CONTENT}
         </columns>
     </row>
-    <row>
-        <columns large="12">
-            <p>Fecha de Entrega: <strong>{DATE}</strong></p>
-            <p>PMB: <strong>{PMB}</strong>
-
-            <table>
-                <tr><th>Item</th><th>#</th><th>Price</th></tr>
-                <tr><td>Ship's Cannon</td><td>2</td><td>$100</td></tr>
-                <tr><td>Ship's Cannon</td><td>2</td><td>$100</td></tr>
-                <tr><td>Ship's Cannon</td><td>2</td><td>$100</td></tr>
-                <tr>
-                    <td colspan="2"><b>Subtotal:</b></td>
-                    <td>$600</td>
-                </tr>
-            </table>
-
-            <hr/>
-        </columns>
-    </row>
+    {TABLE}
 </container>
 <footer>
     <div style="text-align:center;">

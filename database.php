@@ -1,22 +1,15 @@
 <?php
+include_once('environment.php');
 
 class DB {
     /** @var PDO $connection */
     public $connection;
     public $error = [];
-    private $username;
-    private $password;
     private $dsn;
 
     public function __construct(){
-//        $host='maspostwarehouseusers.com';
-        $host='localhost';
+        $host = $_ENV["mode"] === "development" ? 'localhost' : 'maspostwarehouseusers.com';
         $db = 'maspost';
-//        $this->username = 'appmasuser';
-//        $this->password = 'Myapp11!';
-
-        $this->username = 'root';
-        $this->password = 'Socorro000!';
 
         $this->dsn= "mysql:host=$host;dbname=$db;charset=utf8";
         $this->connect();
@@ -24,7 +17,7 @@ class DB {
 
     private function connect(){
         try{
-            $this->connection = new PDO($this->dsn, $this->username, $this->password);
+            $this->connection = new PDO($this->dsn, $_ENV["MASPOST_DB_USERNAME"], $_ENV["MASPOST_DB_PASSWORD"]);
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         }catch(PDOException $e){

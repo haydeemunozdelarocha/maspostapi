@@ -1,10 +1,12 @@
 <?php
 namespace MaspostAPI\Routes\ExpressPickup;
-
+require_once(__DIR__.'/../../repositories/AuthorizePickup.php');
 require_once(__DIR__.'/../../repositories/ExpressPickup.php');
 require_once(__DIR__.'/../Endpoint.php');
 
 use MaspostAPI\Repositories\ExpressPickup;
+use MaspostAPI\Repositories\AuthorizePickup;
+
 use MaspostAPI\Routes\ENDPOINT;
 use Slim\Http\Request;
 use Slim\Http\Response;
@@ -43,10 +45,16 @@ class CREATE extends ENDPOINT
             return $response->withStatus(400);
         }
 
+        if (!isset($parsedBody['name']) ||
+            empty($parsedBody['name'])) {
+            return $response->withStatus(400);
+        }
+
         $this->data = [
             'pmb' => $parsedBody['pmb'],
             'date' => $parsedBody['date'],
             'time' => $parsedBody['time'],
+            'name' => $parsedBody['name'],
             'ids' => $parsedBody['ids']
         ];
 
@@ -60,8 +68,12 @@ class CREATE extends ENDPOINT
 
     protected function execute(Request $request, Response $response, array &$args)
     {
-        $result = ExpressPickup::create($this->data['ids'], $this->data['date'], $this->data['time']);
+        $result = ExpressPickup::create($this->data['ids'], $this->data['pmb'], $this->data['date'], $this->data['time'], $this->data['name']);
 
-        return $response->withJson($result, 200);
+        if ($result) {
+            return $response->withJson($result, 200);
+        } else {
+            return $response->withStatus(400);
+        }
     }
 }

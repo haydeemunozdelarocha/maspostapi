@@ -1,7 +1,6 @@
 <?php
 namespace MaspostAPI;
 
-use MaspostAPI\Repositories\Clientes;
 use PHPMailer\PHPMailer;
 
 class Email {
@@ -9,8 +8,8 @@ class Email {
     protected $mail;
     private $recipient;
 
-    function __construct($pmb, $subject, $template) {
-        $this->recipient = Clientes::getClientInfo($pmb)[0]['email'];
+    function __construct($email, $subject, $template) {
+        $this->recipient = $email;
         $this->mail = new PHPMailer\PHPMailer();
         $this->mail->isSMTP();
         $this->mail->CharSet = 'UTF-8';
@@ -19,6 +18,7 @@ class Email {
         $this->mail->Username = 'noreply@maspostwarehouseusers.com';
         $this->mail->Password = 'Bendecida77';
         $this->mail->SMTPSecure = 'ssl';
+        $this->mail->From = 'noreply@maspostwarehouseusers.com';
         $this->mail->Sender = 'noreply@maspostwarehouseusers.com';
         $this->mail->Port = 465;
         $this->mail->isHTML(true);

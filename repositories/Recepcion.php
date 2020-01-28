@@ -102,6 +102,42 @@ class Recepcion
         }
     }
 
+    public static function updateGroup($ids, $dataToUpdate)
+    {
+        if (!empty($ids) && !empty($dataToUpdate)) {
+            $updatedPackages = array_filter($ids, function($id, $dataToUpdate) {
+                return self::updatePackageById($dataToUpdate, $id);
+            });
+
+            if (sizeof($updatedPackages) === sizeof($ids)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public static function updatePackageById($dataToUpdate, $id)
+    {
+        $db = new DB();
+        $db = $db->getConnection();
+        $columnsToUpdate = '';
+
+        foreach ($dataToUpdate as $key => $data) {
+            $columnsToUpdate .= $key.'="'.$data.'",';
+        }
+        $query = 'UPDATE recepcion SET '.substr($columnsToUpdate, 0, -1).' WHERE id ='.$id;
+
+        $updatePackage = $db->prepare($query);
+        $updatePackage->execute();
+
+        if ($updatePackage->rowCount() > 0) {
+            return true;
+        }
+
+        return false;
+    }
+
     public static function getFleteras()
     {
         $db = new DB();

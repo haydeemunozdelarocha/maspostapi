@@ -96,11 +96,11 @@ clientes.pmb = ' . $pmb . ' AND c_recibir.tipo=1 LIMIT 1;';
         }
     }
 
-    public static function getAllAutorizadosEntregar()
+    public static function getAllAutorizadosEntregar($pmb)
     {
         $db = new DB();
         $db = $db->getConnection();
-        $query = 'SELECT pmb, TRIM(CONCAT(nombre," ", app, " ", apm)) as nombre FROM maspost.c_recibir order by CAST(pmb AS UNSIGNED);';
+        $query = 'SELECT TRIM(CONCAT(nombre," ", app, " ", apm)) as nombre FROM maspost.c_recibir WHERE pmb = '.$pmb.';';
 
         $result = $db->query($query);
 

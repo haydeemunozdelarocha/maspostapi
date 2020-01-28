@@ -54,7 +54,7 @@ class CREATE extends ENDPOINT
 
     protected function execute(Request $request, Response $response, array &$args)
     {
-        $result = AuthorizePickup::create($this->ids, $this->authorizedName);
+        $result = AuthorizePickup::bulkCreate($this->ids, $this->authorizedName);
 
         if ($result) {
             return $response->withStatus(200);

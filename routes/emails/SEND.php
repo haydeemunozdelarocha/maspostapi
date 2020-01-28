@@ -73,7 +73,8 @@ class SEND extends ENDPOINT
     {
         $template = EmailHelpers::getTemplate($this->data, $this->type);
         $subject = EmailHelpers::getSubject($this->type);
-        $mail = new Email($this->data['pmb'], $subject, $template);
+        $email = Clientes::getClientInfo($this->pmb)['email'];
+        $mail = new Email($email, $subject, $template);
 
         if(!$mail->send())
         {
