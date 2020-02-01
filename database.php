@@ -8,7 +8,7 @@ class DB {
     private $dsn;
 
     public function __construct(){
-        $host = $_ENV["mode"] === "development" ? 'localhost' : 'maspostwarehouseusers.com';
+        $host = $_ENV["mode"] === "development" ? 'localhost' : '107.180.40.152';
         $db = 'maspost';
 
         $this->dsn= "mysql:host=$host;dbname=$db;charset=utf8";
