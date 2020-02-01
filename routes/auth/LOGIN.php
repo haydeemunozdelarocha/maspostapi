@@ -4,6 +4,7 @@ require_once(__DIR__.'/../Endpoint.php');
 require_once(__DIR__.'/../../repositories/Auth.php');
 use MaspostAPI\Routes\ENDPOINT;
 use MaspostAPI\Repositories\Auth;
+use MaspostAPI\Repositories\Clientes;
 
 use Slim\Http\Request;
 use Slim\Http\Response;
@@ -33,25 +34,23 @@ class LOGIN extends ENDPOINT
         $credentials = $isAdmin ? Auth::getAdminCredentials($parsedBody['email']) : Auth::getCustomerCredentials($parsedBody['email']);
 
         $isPasswordValid = false;
+        $user = null;
 
         if (!empty($credentials)){
-            $isPasswordValid = $isAdmin ? $parsedBody['password'] === $credentials[0]['password'] : password_verify($parsedBody['password'], $credentials[0]['password']);
-            $formattedCredentials = [
-                'id' => $credentials[0]['id'],
-                'email' => $credentials[0]['email']
-            ];
-            $formattedCredentials['tipo'] = $isAdmin ? $credentials[0]['tipo'] : 'user';
-
+            $isPasswordValid = $isAdmin ? $parsedBody['password'] === $credentials['password'] : password_verify($parsedBody['password'], $credentials['password']);
             if ($isAdmin) {
-                $formattedCredentials['nombre'] = $credentials[0]['nombre'];
+                $user = $credentials;
             } else {
-                $formattedCredentials['pmb'] = $credentials[0]['pmb'];
+                $user = Clientes::getClientInfo($credentials['pmb']);
+                $user['tipo'] = 'user';
             }
+
+            unset($user['password']);
         }
 
-        if($isPasswordValid)
+        if($isPasswordValid && $user)
         {
-            return $response->withStatus(200)->withJson($formattedCredentials);
+            return $response->withStatus(200)->withJson($user);
         } else {
             return $response->withStatus(500)->withJson('Invalid credentials');
         }

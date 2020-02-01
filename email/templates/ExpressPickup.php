@@ -21,6 +21,7 @@ class ExpressPickup {
      $this->pmb = $data['pmb'];
      $this->packages = $data['packages'];
      $this->ids = $data['ids'];
+     $this->expressId = $data['express_id'];
 
      ExpressPickup::setContent();
      ExpressPickup::setTable();
@@ -42,37 +43,31 @@ class ExpressPickup {
                 su disponibilidad para terminar de programar esta entrega. Recibirás un correo
                 con la confirmación. Gracias!</p>';
          } else {
-             $ids = implode(',', $this->ids);
-             $hora=strftime('%I:%M %p',strtotime($this->date));
-             $fecha=strftime('%y-%m-%d',strtotime($this->date));
              $this->content = '<h3>Programada para fin de semana.</h3>
-            <p>Para confirmar la disponibilidad y programar esta entrega, <a href="http://maspostwarehouseusers.com/confirmar_entrega_express?ids='.$ids.'&fecha='.$fecha . '&hora='.$hora.'"> haz click aquí.</a>';
+            <p style="margin-bottom: 40px;">Para confirmar la disponibilidad y programar esta entrega, <a href="http://maspost-users.herokuapp.com/admin/confirm-express-pickup?id='.$this->expressId.'"> haz click aquí.</a>';
          }
-     } else {
-        $this->content = '<p>Hemos recibido tu solicitud de entrega express. A continuación confirmamos los detalles de tu entrega.</p>';
+     }  else {
+         $this->content = '<p style="margin-bottom: 40px;">Hemos recibido tu solicitud de entrega express. A continuación confirmamos los detalles de tu entrega.</p>';
+         return;
      }
  }
 
  function setTable() {
-    if (!Date::isWeekend($this->date) && !$this->isAdmin) {
-        $table = '<row>
+     $table = '<row>
                 <columns large="12">
                     <p>Fecha de Entrega: <strong>'.$this->date.'</strong></p>
                     <p>PMB: <strong>'.$this->pmb.'</strong>
-                    <table><tr><th>Entrada</th><th>Remitente</th><th>Fecha Recepción</th><th>Autorizado</th></tr>';
+                    <table style="font-size: 1rem; margin-top: 30px; border: none;"><tr style="background-color: #f6f6f6; font-weight: 500;"><th>Entrada</th><th>Remitente</th><th>Fecha Recepción</th><th>Autorizado</th></tr>';
 
-        foreach ($this->packages as $package) {
-            $table .= '<tr><td>'.$package['entrada'].'</td><td>'.$package['fromm'].'</td><td>'.$package['fecha_recepcion'].'</td><td>'.$package['nombre_autorizado'].'</td></tr>';
-        }
+     foreach ($this->packages as $package) {
+         $table .= '<tr><td>'.$package['entrada'].'</td><td>'.$package['fromm'].'</td><td>'.$package['fecha_recepcion'].'</td><td>'.$package['nombre_autorizado'].'</td></tr>';
+     }
 
-        $table .= '    </table><hr/>
+     $table .= '    </table><hr/>
                     </columns>
                 </row>';
 
-        $this->table = $table;
-    } else {
-        $this->table = '';
-    }
+     $this->table = $table;
  }
 
  function getBody() {

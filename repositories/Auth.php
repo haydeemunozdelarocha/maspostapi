@@ -13,12 +13,8 @@ class Auth
         $result = $db->query($query);
 
         if (!empty($result)) {
-            $data = [];
-
-            while ($row = $result->fetchAll()) {
-                $data = $row;
-            }
-            return $data;
+            $row = $result->fetch();
+            return $row;
         }
     }
 
@@ -30,12 +26,8 @@ class Auth
         $result = $db->query($query);
 
         if (!empty($result)) {
-            $data = [];
-
-            while ($row = $result->fetchAll()) {
-                $data = $row;
-            }
-            return $data;
+            $row = $result->fetch();
+            return $row;
         }
     }
 
@@ -48,6 +40,7 @@ class Auth
         $updateProfileStatus->execute(array($id));
 
         $updatedUser = Clientes::getClientInfo($pmb);
+        unset($updatedUser['password']);
 
         if ($updatedUser) {
             return $updatedUser;

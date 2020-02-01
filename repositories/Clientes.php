@@ -29,7 +29,7 @@ clientes.pmb = ' . $pmb . ' AND c_recibir.tipo=1 LIMIT 1;';
     {
         $db = new DB();
         $db = $db->getConnection();
-        $query = 'SELECT clientes.id, password, nombre, app, apm, clientes.pmb, direccion, estado, ciudad, pais, cp, clientes.email, vigencia, id_plan  as tipo_plan, credito, perfil_status FROM clientes LEFT JOIN c_recibir ON clientes.pmb =  c_recibir.pmb where clientes.pmb = '.$pmb.' AND c_recibir.tipo = 1;';
+        $query = 'SELECT clientes.id, password, TRIM(CONCAT(nombre," ", app, " ", apm)) as nombre, app, apm, clientes.pmb, direccion, estado, ciudad, pais, cp, clientes.email, vigencia, id_plan  as tipo_plan, credito, perfil_status FROM clientes LEFT JOIN c_recibir ON clientes.pmb =  c_recibir.pmb where clientes.pmb = '.$pmb.' AND c_recibir.tipo = 1;';
 
         $result = $db->query($query);
 

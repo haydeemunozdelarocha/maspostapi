@@ -59,7 +59,7 @@ class RESET_PASSWORD extends ENDPOINT
                 if(Auth::setPassword($credentials[0]['id'], $this->data['password']))
                 {
                     $user = Clientes::getClientInfo($this->data['pmb']);
-
+                    unset($user['password']);
                     if ($user) {
                         return $response->withJson($user, 200);
                     }

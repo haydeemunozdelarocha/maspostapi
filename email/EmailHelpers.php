@@ -43,7 +43,7 @@ class EmailHelpers {
                 if (Date::isWeekend($data['date'])) {
                     return $data['pmb']." - Confirmar: Nueva Entrega Express Fin de Semana";
                 }
-                return $data['pmb']."Nueva Entrega Express";
+                return "#".$data['pmb']." - Nueva Entrega Express";
                 break;
             case "forgot_password":
                 return "Reestablecer Contraseña";

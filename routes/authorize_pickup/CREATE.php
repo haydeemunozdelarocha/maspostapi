@@ -35,14 +35,14 @@ class CREATE extends ENDPOINT
             return $response->withStatus(400);
         }
 
-        if (!isset($parsedBody['authorized_name']) || empty(trim($parsedBody['authorized_name'])))
+        if (!isset($parsedBody['name']) || empty(trim($parsedBody['name'])))
         {
             return $response->withStatus(400);
         }
 
         $this->pmb = $parsedBody['pmb'];
         $this->ids = $parsedBody['ids'];
-        $this->authorizedName = $parsedBody['authorized_name'];
+        $this->authorizedName = $parsedBody['name'];
 
         return true;
     }

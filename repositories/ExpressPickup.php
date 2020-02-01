@@ -37,6 +37,36 @@ class ExpressPickup
         }
     }
 
+    public static function updateGroup($dataToUpdate) {
+        $db = new DB();
+        $db = $db->getConnection();
+        $columnsToUpdate = '';
+        $updatedPackages = [];
+
+        foreach ($dataToUpdate as $index => $package) {
+            if (!isset($package['id']) ||
+            empty($package['id'])) {
+                return false;
+            }
+
+            foreach ($package as $key => $data) {
+                if ($key !== 'id') {
+                    $columnsToUpdate .= $key.'="'.$data.'",';
+                }
+            }
+            $query = 'UPDATE maspost.entrega_express SET '.substr($columnsToUpdate, 0, -1).' WHERE express_id ='.$package['id'];
+
+            $insertPassword = $db->prepare($query);
+            $insertPassword->execute();
+
+            if ($insertPassword->rowCount() > 0) {
+                array_push($updatedPackages, $package);
+            }
+        }
+
+        return sizeof($updatedPackages) !== sizeof($dataToUpdate);
+    }
+
     public static function create($ids, $pmb, $fecha, $hora, $name)
     {
         $db = new DB();
@@ -62,6 +92,7 @@ class ExpressPickup
                         'pmb' => $pmb,
                         'date' => $newExpressPickup['fecha'],
                         'ids' => $ids,
+                        'express_id' => $express_id,
                         'packages' => $newExpressPickup['paquetes']
                     ];
 
