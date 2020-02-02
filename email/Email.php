@@ -13,18 +13,18 @@ class Email {
         $this->mail = new PHPMailer\PHPMailer();
         $this->mail->isSMTP();
         $this->mail->CharSet = 'UTF-8';
-        $this->mail->Host = 'a2plcpnl0769.prod.iad2.secureserver.net';
+        $this->mail->Host = 'a2plcpnl0207.prod.iad2.secureserver.net';
         $this->mail->SMTPAuth = true;
-        $this->mail->Username = 'noreply@maspostwarehouseusers.com';
+        $this->mail->Username = 'noreply@maspostwarehouse.com';
         $this->mail->Password = 'Bendecida77';
         $this->mail->SMTPSecure = 'ssl';
-        $this->mail->From = 'noreply@maspostwarehouseusers.com';
-        $this->mail->Sender = 'noreply@maspostwarehouseusers.com';
+        $this->mail->From = 'noreply@maspostwarehouse.com';
+        $this->mail->Sender = 'noreply@maspostwarehouse.com';
         $this->mail->Port = 465;
         $this->mail->isHTML(true);
 
-        $this->mail->setFrom('noreply@maspostwarehouseusers.com', 'Maspost Warehouse');
-        $this->mail->addReplyTo('noreply@maspostwarehouseusers.com', 'Maspost Warehouse');
+        $this->mail->setFrom('noreply@maspostwarehouse.com', 'Maspost Warehouse');
+        $this->mail->addReplyTo('noreply@maspostwarehouse.com', 'Maspost Warehouse');
         $this->mail->addAddress($this->recipient);
 
         $this->mail->Subject = $subject;
