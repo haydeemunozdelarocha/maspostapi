@@ -22,7 +22,7 @@ class GET_ALL extends ENDPOINT
 
         if (!isset($params['pmb']) ||
             empty($params['pmb'])) {
-            return $response->withStatus(400, 'Invalid PMB');
+            return $response->withStatus(400, 'Invalid PMB: '.$params['pmb']);
         }
 
         $queryData['pmb'] = $params['pmb'];
