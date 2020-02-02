@@ -8,16 +8,16 @@ class DB {
     private $dsn;
 
     public function __construct(){
-        $host = $_ENV["mode"] === "development" ? 'localhost' : '107.180.40.152';
+        $host = $_ENV["mode"] === "development" ? 'localhost' : 'maspostwarehouseusers.com';
         $db = 'maspost';
 
-        $this->dsn= "mysql:host=$host;dbname=$db;charset=utf8";
+        $this->dsn= "mysql:host=$host;port=3306;dbname=$db;charset=utf8";
         $this->connect();
     }
 
     private function connect(){
         try{
-            $this->connection = new PDO($this->dsn, $_ENV["MASPOST_DB_USERNAME"], $_ENV["MASPOST_DB_PASSWORD"]);
+            $this->connection = new PDO($this->dsn, 'haydeemunoz', 'Socorro000!');
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         }catch(PDOException $e){

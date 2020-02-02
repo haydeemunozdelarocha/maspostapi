@@ -23,7 +23,7 @@ class Recepcion
         $pickUpDateColumn = '';
         $orderByDate= '';
 
-        if ($queryData['status'] === 'en_bodega') {
+        if (isset($queryData['status']) && $queryData['status'] === 'en_bodega') {
             $statusQuery = 'where fecha_entrega IS NULL AND id_salida = 0 ';
             $orderByDate = 'fecha_recepcion DESC';
         } else {
