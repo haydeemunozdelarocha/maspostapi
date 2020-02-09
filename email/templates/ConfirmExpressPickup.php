@@ -47,7 +47,7 @@ class ConfirmExpressPickup {
                 <columns large="12">
                     <p>Fecha de Entrega: <strong>'.$this->date.'</strong></p>
                     <p>PMB: <strong>'.$this->pmb.'</strong>
-                    <table style="font-size: 1rem; margin-top: 30px; border: none;"><tr style="background-color: #f6f6f6; font-weight: 500;"><th>Entrada</th><th>Remitente</th><th>Fecha Recepción</th><th>Autorizado</th></tr>';
+                    <table align="center" width="100%" style="font-size: 1rem; margin-top: 30px; border: none; width:100%;"><tr style="background-color: #f6f6f6; font-weight: 500;"><th>Entrada</th><th>Remitente</th><th>Fecha Recepción</th><th>Autorizado</th></tr>';
 
         foreach ($this->packages as $package) {
             $table .= '<tr><td>'.$package['entrada'].'</td><td>'.$package['fromm'].'</td><td>'.$package['fecha_recepcion'].'</td><td>'.$package['nombre_autorizado'].'</td></tr>';
