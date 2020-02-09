@@ -81,7 +81,7 @@ class CREATE extends ENDPOINT
                 'autorizaciones@maspostwarehouse.com');
 
             if ($emailUser->send()) {
-                return $response->withJson($email);
+                return $response->withJson(200);
             } else {
                 return $response->withStatus(500);
             }
