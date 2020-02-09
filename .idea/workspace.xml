@@ -2,32 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66179d57-de88-4c95-aa71-083821ef1437" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/email/templates/AuthorizedName.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/maspost-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/maspost-api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/email/Email.php" beforeDir="false" afterPath="$PROJECT_DIR$/email/Email.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/email/EmailHelpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/email/EmailHelpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/email/templates/ExpressPickup.php" beforeDir="false" afterPath="$PROJECT_DIR$/email/templates/ExpressPickup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/email/templates/ForgotPassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/email/templates/ForgotPassword.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/email/templates/foundations/entrega_express.html" beforeDir="false" afterPath="$PROJECT_DIR$/email/templates/foundations/simple.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/email/templates/foundations/forgot_password.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/environment.php" beforeDir="false" afterPath="$PROJECT_DIR$/environment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repositories/ExpressPickup.php" beforeDir="false" afterPath="$PROJECT_DIR$/repositories/ExpressPickup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/auth/FORGOT_PASSWORD.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth/FORGOT_PASSWORD.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/auth/LOGIN.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth/LOGIN.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/auth/RESET_PASSWORD.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth/RESET_PASSWORD.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/authorize_pickup/CREATE.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/authorize_pickup/CREATE.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="19" column="82" lean-forward="true" selection-start-line="19" selection-start-column="82" selection-end-line="19" selection-end-column="110" />
+            <state relative-caret-position="248">
+              <caret line="19" column="82" selection-start-line="19" selection-start-column="82" selection-end-line="19" selection-end-column="110" />
             </state>
           </provider>
         </entry>
@@ -79,7 +54,7 @@
         <entry file="file://$PROJECT_DIR$/routes/auth/LOGIN.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="258">
-              <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+              <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
               <folding>
                 <element signature="e#136#167#0#PHP" expanded="true" />
               </folding>
@@ -121,16 +96,16 @@
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+              <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -221,12 +196,12 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/63454c6b-6968-44c4-bafb-f01511f569e6/console.sql" />
         <option value="$PROJECT_DIR$/routes/auth/RESET_PASSWORD.php" />
         <option value="$PROJECT_DIR$/repositories/ExpressPickup.php" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/routes/auth/LOGIN.php" />
         <option value="$PROJECT_DIR$/environment.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/database.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -471,7 +446,7 @@
       <workItem from="1580714250294" duration="1603000" />
       <workItem from="1580799336015" duration="794000" />
       <workItem from="1580975348269" duration="282000" />
-      <workItem from="1581182690377" duration="4355000" />
+      <workItem from="1581182690377" duration="4424000" />
     </task>
     <task id="LOCAL-00001" summary="Register working">
       <created>1580053353917</created>
@@ -501,36 +476,43 @@
       <option name="project" value="LOCAL" />
       <updated>1580650382317</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="change mode">
+      <created>1581242550110</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1581242550110</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75303000" />
+    <option name="totallyTimeSpent" value="75372000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="23" width="1439" height="796" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29277024" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29277024" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32954547" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.19176136" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.19176136" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32954547" />
+      <window_info anchor="bottom" id="Version Control" order="9" visible="true" weight="0.32954547" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32954547" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.32954547" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.16320688" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.16320688" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -850,24 +832,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/auth/LOGIN.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
-          <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
           <folding>
             <element signature="e#136#167#0#PHP" expanded="true" />
           </folding>
@@ -890,8 +865,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="19" column="82" lean-forward="true" selection-start-line="19" selection-start-column="82" selection-end-line="19" selection-end-column="110" />
+        <state relative-caret-position="248">
+          <caret line="19" column="82" selection-start-line="19" selection-start-column="82" selection-end-line="19" selection-end-column="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
         </state>
       </provider>
     </entry>
