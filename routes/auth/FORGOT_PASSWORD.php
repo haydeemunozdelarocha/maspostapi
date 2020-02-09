@@ -59,6 +59,7 @@ class FORGOT_PASSWORD extends ENDPOINT
                 {
                     echo 'Message could not be sent.';
                     echo 'Mailer Error: ' . $mail->getErrorInfo();
+                    return $response->withStatus(422);
                 } else {
                     return $response->withStatus(200);
                 }

@@ -15,7 +15,7 @@ class AuthorizePickup
         $insertAuthorizedMessage->execute(array($date, $authorizedName, $id, $id));
 
         if ($insertAuthorizedMessage->rowCount() > 0) {
-            return true;
+            return $db->lastInsertId();
         }
 
         return false;
@@ -23,12 +23,22 @@ class AuthorizePickup
 
     public static function bulkCreate($ids, $authorizedName)
     {
+        $db = new DB();
+        $db = $db->getConnection();
         $authorizedNameSet = array_filter($ids, function($id) use ($authorizedName) {
             return self::create($id, $authorizedName);
         });
 
         if (sizeof($ids) === sizeof($authorizedNameSet)) {
-            return true;
+            $idsString = implode(',', $ids);
+            $recepcionQuery = 'SELECT recepcion.*, mensajes.mensaje as nombre_autorizado FROM recepcion LEFT JOIN mensajes ON mensajes.id_recepcion = recepcion.id WHERE recepcion.id IN ('.$idsString.');';
+            $packagesResult = $db->prepare($recepcionQuery);
+            $packagesResult->execute();
+
+            if ($packagesResult) {
+                return $packagesResult->fetchAll();
+
+            }
         }
 
         return false;

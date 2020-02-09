@@ -2,38 +2,50 @@
 namespace MaspostAPI;
 require_once(__DIR__.'/../../helpers/Helpers.php');
 
-class AuthorizedName {
+
+class ConfirmExpressPickup {
     public $body;
+    private $date;
     private $pmb;
     private $table;
+    private $isAdmin;
+    private $title;
+    private $previewText;
+
+    public $translations;
     private $content;
 
-    function __construct($data) {
+    function __construct($data, $isAdmin = false) {
         date_default_timezone_set('America/Denver');
-        $this->pmb = $data['pmb'];
-        $this->packages = $data['packages'];
-        $this->name = $data['name'];
-        $this->title = '<h1 style="padding-top:20px;">Nuevo Nombre Autorizado</h1>';
-        $this->previewText = 'Hemos recibido tu solicitud de autorización de entrega.';
+        $this->date = $data['fecha'];
+        $this->isAdmin = $isAdmin;
+        $this->pmb = $data['paquetes'][0]['pmb'];
+        $this->packages = $data['paquetes'];
+        $this->expressId = $data['express_id'];
+        $this->title = '<h1 style="padding-top:20px;">Confirmación de Entrega Expres</h1>';
+        $this->previewText = 'Confirmación: Entrega Express en Fin de Semana.';
 
-        AuthorizedName::setContent();
-        AuthorizedName::setTable();
-        AuthorizedName::setBody();
+        ConfirmExpressPickup::setContent();
+        ConfirmExpressPickup::setTable();
+        ConfirmExpressPickup::setBody();
     }
 
     function setBody() {
         $this->body = file_get_contents(__DIR__.'/foundations/simple.html');
         $this->body = str_replace('{CONTENT}', $this->content, $this->body);
         $this->body = str_replace('{TABLE}', $this->table, $this->body);
+        $this->body = str_replace('{PREVIEW_TEXT}', $this->previewText, $this->body);
+        $this->body = str_replace('{TITLE}', $this->title, $this->body);
     }
 
     function setContent() {
-        $this->content = '<p style="margin-bottom: 40px;">Hemos autorizado a'.$this->name.' para recoger los siguientes paquetes.</p>';
+        $this->content = '<p style="margin-bottom: 40px;">Hemos recibido tu solicitud de entrega express. A continuación confirmamos los detalles de tu entrega en fin de semana.</p>';
     }
 
     function setTable() {
         $table = '<row>
                 <columns large="12">
+                    <p>Fecha de Entrega: <strong>'.$this->date.'</strong></p>
                     <p>PMB: <strong>'.$this->pmb.'</strong>
                     <table style="font-size: 1rem; margin-top: 30px; border: none;"><tr style="background-color: #f6f6f6; font-weight: 500;"><th>Entrada</th><th>Remitente</th><th>Fecha Recepción</th><th>Autorizado</th></tr>';
 

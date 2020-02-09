@@ -2,6 +2,7 @@
 namespace MaspostAPI\Routes\AuthorizePickup;
 
 require_once(__DIR__.'/../../repositories/AuthorizePickup.php');
+require_once(__DIR__.'/../../repositories/Recepcion.php');
 require_once(__DIR__.'/../Endpoint.php');
 require_once(__DIR__.'/../../email/EmailHelpers.php');
 require_once(__DIR__.'/../../email/Email.php');
@@ -10,6 +11,8 @@ use MaspostAPI\EmailHelpers;
 use MaspostAPI\Email;
 use MaspostAPI\Repositories\Clientes;
 use MaspostAPI\Repositories\AuthorizePickup;
+use MaspostAPI\Repositories\Recepcion;
+
 use MaspostAPI\Routes\ENDPOINT;
 use Slim\Http\Request;
 use Slim\Http\Response;
@@ -61,18 +64,26 @@ class CREATE extends ENDPOINT
     {
         $result = AuthorizePickup::bulkCreate($this->data['ids'], $this->data['name']);
 
+        $templateData = [
+            'packages' => $result,
+            'pmb' => $this->data['pmb'],
+            'name' => $this->data['name']
+        ];
+
         if ($result) {
             $email = Clientes::getClientInfo($this->data['pmb'])['email'];
             $emailType = 'autorizado';
 
             $emailUser = new Email($email,
-                EmailHelpers::getSubject($emailType, $this->data),
-                EmailHelpers::getTemplate($this->data, $emailType),
+                EmailHelpers::getSubject($emailType, $templateData),
+                EmailHelpers::getTemplate($templateData, $emailType),
                 true,
                 'autorizaciones@maspostwarehouse.com');
 
             if ($emailUser) {
                 return $response->withStatus(200);
+            } else {
+                return $response->withStatus(500);
             }
         }
     }

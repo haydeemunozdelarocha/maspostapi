@@ -10,6 +10,8 @@ require_once('routes/captura/TEST.php');
 require_once('routes/emails/SEND.php');
 require_once('routes/express_pickup/CREATE.php');
 require_once('routes/express_pickup/UPDATE_GROUP.php');
+require_once('routes/express_pickup/UPDATE_ONE.php');
+require_once('routes/express_pickup/CONFIRM.php');
 require_once('routes/authorize_pickup/CREATE.php');
 require_once('routes/auth/FORGOT_PASSWORD.php');
 require_once('routes/auth/RESET_PASSWORD.php');
@@ -37,7 +39,7 @@ $app->group('/recepcion', function () {
     $this->get('/all', MaspostAPI\Routes\Recepcion\GET_ALL::class);
     $this->get('/group', MaspostAPI\Routes\Recepcion\GET_GROUP::class);
     $this->post('/express_pickup', MaspostAPI\Routes\ExpressPickup\CREATE::class);
-    $this->put('/express_pickup/:id', MaspostAPI\Routes\ExpressPickup\UPDATE_ONE::class);
+    $this->post('/confirm_express_pickup', MaspostAPI\Routes\ExpressPickup\CONFIRM::class);
     $this->put('/express_pickup', MaspostAPI\Routes\ExpressPickup\UPDATE_GROUP::class);
     $this->post('/authorize_pickup', MaspostAPI\Routes\AuthorizePickup\CREATE::class);
     $this->get('/fleteras', MaspostAPI\Routes\Recepcion\GET_FLETERAS::class);

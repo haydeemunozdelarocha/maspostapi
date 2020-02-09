@@ -17,7 +17,6 @@ class ExpressPickup
         $query = 'SELECT * FROM maspost.entrega_express where express_id='.$id.' LIMIT 1;';
 
         $result = $db->query($query);
-
         if (!empty($result)) {
             $data = [];
 
@@ -25,7 +24,6 @@ class ExpressPickup
                 $data = $row;
             }
             $recepcionQuery = 'SELECT recepcion.*, mensajes.mensaje as nombre_autorizado FROM recepcion LEFT JOIN mensajes ON mensajes.id_recepcion = recepcion.id WHERE recepcion.id IN (SELECT recepcion_id FROM maspost.express_recepcion where express_id='.$id.') LIMIT 1;';
-
             $getRecepcionIds = $db->query($recepcionQuery);
 
             if (!empty($getRecepcionIds)) {
@@ -35,6 +33,29 @@ class ExpressPickup
             }
 
         }
+    }
+
+    public static function updateOne($dataToUpdate) {
+        $db = new DB();
+        $db = $db->getConnection();
+        $columnsToUpdate = '';
+
+        if (!isset($dataToUpdate['id']) ||
+            empty($dataToUpdate['id'])) {
+            return false;
+        }
+
+        foreach ($dataToUpdate as $key => $data) {
+            if ($key !== 'id') {
+                $columnsToUpdate .= $key.'='.$data.',';
+            }
+        }
+
+        $query = 'UPDATE maspost.entrega_express SET '.substr($columnsToUpdate, 0, -1).' WHERE express_id = '.$dataToUpdate['id'];
+        $insertPassword = $db->prepare($query);
+        $insertPassword->execute();
+
+        return ExpressPickup::getOne($dataToUpdate['id']);
     }
 
     public static function updateGroup($dataToUpdate) {

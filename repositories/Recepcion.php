@@ -46,7 +46,7 @@ class Recepcion
             $statusQuery = 'where fecha_entrega IS NOT NULL AND id_salida IS NOT NULL ';
         }
 
-        $columns = self::formatDate('recepcion.fecha_recepcion', 'fecha_recepcion').', recepcion.entrada as ID,'.$deliveryColumn.$pickUpDateColumn.' tipo_entradas.nombre AS tipo, recepcion.fromm as `remitente`, recepcion.nombre as `destinatario`,fleteras.nombre AS fletera, '. self::truncatedTrackingNumber().'  as `tracking`,recepcion.peso as `peso(lbs)`, CONCAT("$", recepcion.cod) as `COD`'.$pickupPerson;
+        $columns = self::formatDate('recepcion.fecha_recepcion', 'fecha_recepcion').', recepcion.id as ID, recepcion.entrada as Entrada,'.$deliveryColumn.$pickUpDateColumn.' tipo_entradas.nombre AS tipo, recepcion.fromm as `remitente`, recepcion.nombre as `destinatario`,fleteras.nombre AS fletera, '. self::truncatedTrackingNumber().'  as `tracking`,recepcion.peso as `peso(lbs)`, CONCAT("$", recepcion.cod) as `COD`'.$pickupPerson;
         $query = 'select '.$columns.'from recepcion join tipo_entradas on recepcion.tipo = tipo_entradas.id join fleteras on recepcion.fletera = fleteras.id left join salidas on recepcion.id_salida = salidas.id '.$statusQuery.$dateQuery.' AND recepcion.pmb = ' . $queryData['pmb'] . ' ORDER BY '.$orderByDate;
         //return json_encode($query);
 

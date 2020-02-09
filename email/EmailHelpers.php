@@ -1,6 +1,7 @@
 <?php
 namespace MaspostAPI;
 require_once(__DIR__.'/templates/ExpressPickup.php');
+require_once(__DIR__.'/templates/ConfirmExpressPickup.php');
 require_once(__DIR__.'/templates/AuthorizedName.php');
 require_once(__DIR__.'/templates/ForgotPassword.php');
 require_once(__DIR__.'/../helpers/Helpers.php');
@@ -20,6 +21,10 @@ class EmailHelpers {
             case "entrega_express_admin":
                 $isAdmin = true;
                 $template = new ExpressPickup($data, $isAdmin);
+                return $template->getBody();
+                break;
+            case "confirm_entrega_express":
+                $template = new ConfirmExpressPickup($data);
                 return $template->getBody();
                 break;
             case "autorizado":
@@ -52,6 +57,9 @@ class EmailHelpers {
                 break;
             case "forgot_password":
                 return "Reestablecer Contraseña";
+                break;
+            case "confirm_express_pickup":
+                return "Confirmación: Entrega Express en Fin de Semana";
                 break;
             case "autorizado":
                 return "#".$data['pmb']." - Nueva Autorización de Entrega";
