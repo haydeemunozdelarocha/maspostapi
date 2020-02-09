@@ -106,7 +106,7 @@ class ExpressPickup
                         echo 'User email could not be sent.';
                         echo 'Mailer Error: ' . $emailUser->getErrorInfo();
                     } else {
-                        $adminMail = new Email('autorizados@maspostwarehouse.com',
+                        $adminMail = new Email('autorizaciones@maspostwarehouse.com',
                             EmailHelpers::getSubject('entrega_express_admin', $templateData),
                             EmailHelpers::getTemplate($templateData, 'entrega_express_admin'));
 

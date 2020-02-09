@@ -69,7 +69,7 @@ class CREATE extends ENDPOINT
                 EmailHelpers::getSubject($emailType, $this->data),
                 EmailHelpers::getTemplate($this->data, $emailType),
                 true,
-                'autorizados@maspostwarehouse.com');
+                'autorizaciones@maspostwarehouse.com');
 
             if ($emailUser) {
                 return $response->withStatus(200);
