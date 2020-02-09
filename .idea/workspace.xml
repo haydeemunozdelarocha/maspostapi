@@ -2,20 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66179d57-de88-4c95-aa71-083821ef1437" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/email/templates/ConfirmExpressPickup.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/express_pickup/CONFIRM.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/email/EmailHelpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/email/EmailHelpers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/email/templates/AuthorizedName.php" beforeDir="false" afterPath="$PROJECT_DIR$/email/templates/AuthorizedName.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/environment.php" beforeDir="false" afterPath="$PROJECT_DIR$/environment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/repositories/AuthorizePickup.php" beforeDir="false" afterPath="$PROJECT_DIR$/repositories/AuthorizePickup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repositories/ExpressPickup.php" beforeDir="false" afterPath="$PROJECT_DIR$/repositories/ExpressPickup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repositories/Recepcion.php" beforeDir="false" afterPath="$PROJECT_DIR$/repositories/Recepcion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/auth/FORGOT_PASSWORD.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth/FORGOT_PASSWORD.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/authorize_pickup/CREATE.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/authorize_pickup/CREATE.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/express_pickup/CONFIRM.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/express_pickup/CONFIRM.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,11 +39,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/authorize_pickup/CREATE.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="85" column="46" selection-start-line="85" selection-start-column="46" selection-end-line="85" selection-end-column="46" />
+            <state relative-caret-position="107">
+              <caret line="64" column="38" lean-forward="true" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
               <folding>
                 <element signature="e#263#291#0#PHP" expanded="true" />
               </folding>
@@ -60,10 +52,23 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/repositories/Recepcion.php">
+        <entry file="file://$PROJECT_DIR$/repositories/Clientes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="87" column="27" selection-start-line="87" selection-start-column="27" selection-end-line="87" selection-end-column="27" />
+            <state relative-caret-position="181">
+              <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/express_pickup/CONFIRM.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="56" column="107" selection-start-line="56" selection-start-column="107" selection-end-line="56" selection-end-column="107" />
+              <folding>
+                <element signature="e#156#198#0#PHP" expanded="true" />
+                <element signature="e#381#418#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -72,7 +77,7 @@
         <entry file="file://$PROJECT_DIR$/routes/express_pickup/CREATE.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="310">
-              <caret line="70" column="35" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
+              <caret line="70" column="36" lean-forward="true" selection-start-line="70" selection-start-column="36" selection-end-line="70" selection-end-column="36" />
               <folding>
                 <element signature="e#220#262#0#PHP" expanded="true" />
               </folding>
@@ -81,10 +86,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/email/EmailHelpers.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-483">
+              <caret line="3" column="29" lean-forward="true" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/repositories/ExpressPickup.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="54" column="5" lean-forward="true" selection-start-line="54" selection-start-column="5" selection-end-line="55" selection-end-column="35" />
+            <state relative-caret-position="-279">
+              <caret line="90" column="27" selection-start-line="90" selection-start-column="27" selection-end-line="90" selection-end-column="27" />
               <folding>
                 <element signature="e#189#210#0#PHP" expanded="true" />
               </folding>
@@ -93,37 +107,32 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/email/EmailHelpers.php">
+        <entry file="file://$PROJECT_DIR$/email/templates/ExpressPickup.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-45">
-              <caret line="3" column="29" lean-forward="true" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+            <state relative-caret-position="193">
+              <caret line="39" selection-start-line="39" selection-end-line="40" selection-end-column="69" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/email/templates/ConfirmExpressPickup.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="33">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
+              <folding>
+                <element signature="n#style#0;n#h1#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/repositories/AuthorizePickup.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/auth/FORGOT_PASSWORD.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-533">
-              <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/recepcion/GET_GROUP.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="100" />
+            <state relative-caret-position="316">
+              <caret line="33" column="196" selection-start-line="33" selection-start-column="196" selection-end-line="33" selection-end-column="196" />
             </state>
           </provider>
         </entry>
@@ -131,26 +140,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/email/templates/AuthorizedName.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="566">
-              <caret line="39" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="301">
+              <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
               <folding>
                 <element signature="n#style#0;n#h1#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#table#0;n#columns#0;n#row#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#tr#0;n#table#0;n#columns#0;n#row#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/express_pickup/CONFIRM.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
-              <folding>
-                <element signature="e#156#198#0#PHP" expanded="true" />
-                <element signature="e#381#418#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -222,19 +218,19 @@
         <option value="$PROJECT_DIR$/email/templates/ExpressPickup.php" />
         <option value="$PROJECT_DIR$/email/templates/ForgotPassword.php" />
         <option value="$PROJECT_DIR$/email/Email.php" />
-        <option value="$PROJECT_DIR$/environment.php" />
         <option value="$PROJECT_DIR$/routes/auth/FORGOT_PASSWORD.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/ba3a09a8-8839-4287-acd3-3e808d8881d9/console.sql" />
-        <option value="$PROJECT_DIR$/email/templates/AuthorizedName.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/63454c6b-6968-44c4-bafb-f01511f569e6/console.sql" />
         <option value="$PROJECT_DIR$/repositories/Recepcion.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/repositories/ExpressPickup.php" />
         <option value="$PROJECT_DIR$/email/EmailHelpers.php" />
-        <option value="$PROJECT_DIR$/routes/express_pickup/CONFIRM.php" />
         <option value="$PROJECT_DIR$/email/templates/ConfirmExpressPickup.php" />
-        <option value="$PROJECT_DIR$/repositories/AuthorizePickup.php" />
+        <option value="$PROJECT_DIR$/environment.php" />
         <option value="$PROJECT_DIR$/routes/authorize_pickup/CREATE.php" />
+        <option value="$PROJECT_DIR$/routes/express_pickup/CONFIRM.php" />
+        <option value="$PROJECT_DIR$/email/templates/AuthorizedName.php" />
+        <option value="$PROJECT_DIR$/repositories/AuthorizePickup.php" />
       </list>
     </option>
   </component>
@@ -461,7 +457,7 @@
       <workItem from="1580714250294" duration="1603000" />
       <workItem from="1580799336015" duration="794000" />
       <workItem from="1580975348269" duration="282000" />
-      <workItem from="1581182690377" duration="20854000" />
+      <workItem from="1581182690377" duration="22528000" />
     </task>
     <task id="LOCAL-00001" summary="Register working">
       <created>1580053353917</created>
@@ -540,11 +536,18 @@
       <option name="project" value="LOCAL" />
       <updated>1581254193708</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="adding auth and confirm pickup email">
+      <created>1581265387095</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1581265387095</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91802000" />
+    <option name="totallyTimeSpent" value="93476000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="23" width="1439" height="796" extended-state="0" />
@@ -579,7 +582,8 @@
     <MESSAGE value="Register working" />
     <MESSAGE value="Fix emails" />
     <MESSAGE value="change mode" />
-    <option name="LAST_COMMIT_MESSAGE" value="change mode" />
+    <MESSAGE value="adding auth and confirm pickup email" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding auth and confirm pickup email" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/routes/clientes/GET_ALL_AUTORIZADOS_ENTREGAR.php">
@@ -702,13 +706,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/repositories/Clientes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/auth/LOGIN.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
@@ -773,13 +770,6 @@
             <element signature="n#style#0;n#h1#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/environment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -849,42 +839,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/email/templates/ExpressPickup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="82" selection-end-column="1" />
-          <folding>
-            <element signature="n#style#0;n#h1#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/email/templates/ConfirmExpressPickup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="n#style#0;n#h1#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#columns#0;n#row#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#tr#0;n#table#0;n#columns#0;n#row#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/express_pickup/CONFIRM.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
-          <folding>
-            <element signature="e#156#198#0#PHP" expanded="true" />
-            <element signature="e#381#418#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/recepcion/GET_GROUP.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="387">
@@ -906,10 +860,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/environment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/express_pickup/CREATE.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
-          <caret line="70" column="35" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
+          <caret line="70" column="36" lean-forward="true" selection-start-line="70" selection-start-column="36" selection-end-line="70" selection-end-column="36" />
           <folding>
             <element signature="e#220#262#0#PHP" expanded="true" />
           </folding>
@@ -918,25 +879,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/repositories/ExpressPickup.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="54" column="5" lean-forward="true" selection-start-line="54" selection-start-column="5" selection-end-line="55" selection-end-column="35" />
+        <state relative-caret-position="-279">
+          <caret line="90" column="27" selection-start-line="90" selection-start-column="27" selection-end-line="90" selection-end-column="27" />
           <folding>
             <element signature="e#189#210#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/repositories/AuthorizePickup.php">
+    <entry file="file://$PROJECT_DIR$/routes/express_pickup/CONFIRM.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+        <state relative-caret-position="306">
+          <caret line="56" column="107" selection-start-line="56" selection-start-column="107" selection-end-line="56" selection-end-column="107" />
+          <folding>
+            <element signature="e#156#198#0#PHP" expanded="true" />
+            <element signature="e#381#418#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/email/templates/ExpressPickup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="39" selection-start-line="39" selection-end-line="40" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/repositories/Clientes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/authorize_pickup/CREATE.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="64" column="38" lean-forward="true" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
+          <folding>
+            <element signature="e#263#291#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/email/templates/ConfirmExpressPickup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="n#style#0;n#h1#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/email/EmailHelpers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-483">
+          <caret line="3" column="29" lean-forward="true" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/email/templates/AuthorizedName.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="301">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
           <folding>
             <element signature="n#style#0;n#h1#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
@@ -946,20 +953,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/email/EmailHelpers.php">
+    <entry file="file://$PROJECT_DIR$/repositories/AuthorizePickup.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-45">
-          <caret line="3" column="29" lean-forward="true" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/authorize_pickup/CREATE.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="85" column="46" selection-start-line="85" selection-start-column="46" selection-end-line="85" selection-end-column="46" />
-          <folding>
-            <element signature="e#263#291#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="316">
+          <caret line="33" column="196" selection-start-line="33" selection-start-column="196" selection-end-line="33" selection-end-column="196" />
         </state>
       </provider>
     </entry>

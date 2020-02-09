@@ -25,10 +25,12 @@ class AuthorizedName {
         $this->body = file_get_contents(__DIR__.'/foundations/simple.html');
         $this->body = str_replace('{CONTENT}', $this->content, $this->body);
         $this->body = str_replace('{TABLE}', $this->table, $this->body);
+        $this->body = str_replace('{PREVIEW_TEXT}', $this->previewText, $this->body);
+        $this->body = str_replace('{TITLE}', $this->title, $this->body);
     }
 
     function setContent() {
-        $this->content = '<p style="margin-bottom: 40px;">Hemos autorizado a'.$this->name.' para recoger los siguientes paquetes.</p>';
+        $this->content = '<p style="margin-bottom: 40px;">Hemos autorizado a: <strong>'.$this->name.'</strong> para recoger los siguientes paquetes.</p>';
     }
 
     function setTable() {

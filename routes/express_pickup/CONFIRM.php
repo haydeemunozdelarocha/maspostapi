@@ -54,6 +54,7 @@ class CONFIRM extends ENDPOINT
             $emailUser = new Email($email,
                 EmailHelpers::getSubject('confirm_entrega_express', $updatedExpressPickup),
                 EmailHelpers::getTemplate($updatedExpressPickup, 'confirm_entrega_express'));
+            return $response->withJson(Clientes::getClientInfo($updatedExpressPickup['paquetes'][0]['pmb']));
 
             if(!$emailUser->send())
             {
@@ -62,8 +63,6 @@ class CONFIRM extends ENDPOINT
             } else {
                 return $response->withJson($updatedExpressPickup, 200);
             }
-
-            return $response->withJson($updatedExpressPickup, 200);
         }
 
         return false;

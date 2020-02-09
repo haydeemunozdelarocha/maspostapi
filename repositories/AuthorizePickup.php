@@ -31,7 +31,7 @@ class AuthorizePickup
 
         if (sizeof($ids) === sizeof($authorizedNameSet)) {
             $idsString = implode(',', $ids);
-            $recepcionQuery = 'SELECT recepcion.*, mensajes.mensaje as nombre_autorizado FROM recepcion LEFT JOIN mensajes ON mensajes.id_recepcion = recepcion.id WHERE recepcion.id IN ('.$idsString.');';
+            $recepcionQuery = 'SELECT recepcion.*, mensajes.mensaje as nombre_autorizado FROM recepcion JOIN mensajes ON mensajes.id_recepcion = recepcion.id WHERE recepcion.id IN ('.$idsString.');';
             $packagesResult = $db->prepare($recepcionQuery);
             $packagesResult->execute();
 
