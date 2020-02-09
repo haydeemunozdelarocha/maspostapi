@@ -13,7 +13,7 @@ class Email {
         $this->mail = new PHPMailer\PHPMailer();
         $this->mail->isSMTP();
         $this->mail->CharSet = 'UTF-8';
-        $this->mail->Host = 'a2plcpnl0207.prod.iad2.secureserver.net';
+        $this->mail->Host = 'maspostwarehouse.com';
         $this->mail->SMTPAuth = true;
         $this->mail->Username = 'noreply@maspostwarehouse.com';
         $this->mail->Password = 'Bendecida77';
