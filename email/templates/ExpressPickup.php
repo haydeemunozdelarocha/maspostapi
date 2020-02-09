@@ -11,6 +11,9 @@ class ExpressPickup {
     private $table;
     private $isAdmin;
     private $ids;
+    private $title;
+    private $previewText;
+
     public $translations;
     private $content;
 
@@ -22,6 +25,8 @@ class ExpressPickup {
      $this->packages = $data['packages'];
      $this->ids = $data['ids'];
      $this->expressId = $data['express_id'];
+     $this->title = '<h1 style="padding-top:20px;">Nueva Entrega Express</h1>';
+     $this->previewText = 'Hemos recibido tu solicitud de entrega express.';
 
      ExpressPickup::setContent();
      ExpressPickup::setTable();
@@ -29,9 +34,11 @@ class ExpressPickup {
  }
 
  function setBody() {
-     $this->body = file_get_contents(__DIR__.'/foundations/entrega_express.html');
+     $this->body = file_get_contents(__DIR__.'/foundations/simple.html');
      $this->body = str_replace('{CONTENT}', $this->content, $this->body);
      $this->body = str_replace('{TABLE}', $this->table, $this->body);
+     $this->body = str_replace('{PREVIEW_TEXT}', $this->previewText, $this->body);
+     $this->body = str_replace('{TITLE}', $this->title, $this->body);
  }
 
  function setContent() {

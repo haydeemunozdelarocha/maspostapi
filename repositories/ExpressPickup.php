@@ -97,14 +97,18 @@ class ExpressPickup
                     ];
 
                     $email = Clientes::getClientInfo($pmb)['email'];
-                    $emailUser = new Email($email, EmailHelpers::getSubject('entrega_express', $templateData), EmailHelpers::getTemplate($templateData, 'entrega_express'));
+                    $emailUser = new Email($email,
+                        EmailHelpers::getSubject('entrega_express', $templateData),
+                        EmailHelpers::getTemplate($templateData, 'entrega_express'));
 
                     if(!$emailUser->send())
                     {
                         echo 'User email could not be sent.';
                         echo 'Mailer Error: ' . $emailUser->getErrorInfo();
                     } else {
-                        $adminMail = new Email('haydee.mr0@hotmail.com', EmailHelpers::getSubject('entrega_express_admin', $templateData), EmailHelpers::getTemplate($templateData, 'entrega_express_admin'));
+                        $adminMail = new Email('autorizados@maspostwarehouse.com',
+                            EmailHelpers::getSubject('entrega_express_admin', $templateData),
+                            EmailHelpers::getTemplate($templateData, 'entrega_express_admin'));
 
                         if(!$adminMail->send())
                         {

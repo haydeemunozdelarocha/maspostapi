@@ -29,7 +29,7 @@ class LOGIN extends ENDPOINT
             return $response->withStatus(400)->withJson('Please enter an email and password');
         }
 
-        $isAdmin = $parsedBody['isAdmin'] || false;
+        $isAdmin = isset($parsedBody['isAdmin']) ? $parsedBody['isAdmin'] : false;
 
         $credentials = $isAdmin ? Auth::getAdminCredentials($parsedBody['email']) : Auth::getCustomerCredentials($parsedBody['email']);
 

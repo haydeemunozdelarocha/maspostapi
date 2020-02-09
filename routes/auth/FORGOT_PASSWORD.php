@@ -46,9 +46,9 @@ class FORGOT_PASSWORD extends ENDPOINT
     {
         $credentials = Auth::getCustomerCredentials($this->data['email']);
 
-        if(!empty($credentials) && $this->data['pmb'] == $credentials[0]['pmb'])
+        if(!empty($credentials) && $this->data['pmb'] == $credentials['pmb'])
         {
-            $this->data['token'] = Auth::setTemporaryPassword($credentials[0]['id']);
+            $this->data['token'] = Auth::setTemporaryPassword($credentials['id']);
 
             if($this->data['token'])
             {

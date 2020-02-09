@@ -17,7 +17,7 @@ class DB {
 
     private function connect(){
         try{
-            $this->connection = new PDO($this->dsn, , );
+            $this->connection = new PDO($this->dsn, $_ENV["MASPOST_DB_USERNAME"], $_ENV["MASPOST_DB_PASSWORD"]);
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         }catch(PDOException $e){

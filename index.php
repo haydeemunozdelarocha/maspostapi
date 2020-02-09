@@ -17,6 +17,8 @@ require_once('routes/auth/NEW_USER.php');
 require_once('routes/auth/ACCEPT_TERMS.php');
 require_once('routes/auth/LOGIN.php');
 require_once('routes/admin/SUMMARY.php');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 $app = new Slim\App();
 $app->options('/{routes:.+}', function ($request, $response, $args) {

@@ -6,7 +6,8 @@
     "phpmailer/phpmailer": "^6.0",
     "google/cloud-vision": "^0.24.0",
     "dsiddharth2/php-zxing": "^1.0",
-    "ext-PDO": "^7.2"
+    "ext-PDO": "^7.2",
+    "vlucas/phpdotenv": "^4.1"
   },
   "require-dev": {
     "codeception/codeception": "^3.1",

@@ -51,12 +51,12 @@ class RESET_PASSWORD extends ENDPOINT
 
         $credentials = Auth::getCustomerCredentials($this->data['email']);
 
-        if(!empty($credentials) && $this->data['pmb'] == $credentials[0]['pmb'])
+        if(!empty($credentials) && $this->data['pmb'] == $credentials['pmb'])
         {
 
-            if(password_verify($this->data['token'], $credentials[0]['password']))
+            if(password_verify($this->data['token'], $credentials['password']))
             {
-                if(Auth::setPassword($credentials[0]['id'], $this->data['password']))
+                if(Auth::setPassword($credentials['id'], $this->data['password']))
                 {
                     $user = Clientes::getClientInfo($this->data['pmb']);
                     unset($user['password']);
