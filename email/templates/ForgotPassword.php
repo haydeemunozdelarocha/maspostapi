@@ -39,6 +39,6 @@ class ForgotPassword {
         $this->content = '
                     <p style="padding-bottom: 20px;">Olvidaste tu contraseña? No hay problema! Solo haz click aquí para crear una nueva contraseña.<p>
                     <div style="padding: 5px 20px 50px; text-align: center;">
-                    <a style="padding: 12px 14px; margin-bottom: 100px; background-color: #1c51c6; text-decoration: none;color: white;" href="http://maspost-users.herokuapp.com/reset-password?token='.$this->token.'&email='.$this->email.'&pmb='.$this->pmb.'">Crea una nueva contraseña</a></div>';
+                    <a style="padding: 12px 14px; margin-bottom: 100px; background-color: #1c51c6; text-decoration: none;color: white;" href="'.$_ENV["MASPOST_USERS_URL"].'/reset-password?token='.$this->token.'&email='.$this->email.'&pmb='.$this->pmb.'">Crea una nueva contraseña</a></div>';
     }
 }

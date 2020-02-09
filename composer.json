@@ -7,7 +7,8 @@
     "google/cloud-vision": "^0.24.0",
     "dsiddharth2/php-zxing": "^1.0",
     "ext-PDO": "^7.2",
-    "vlucas/phpdotenv": "^4.1"
+    "vlucas/phpdotenv": "^4.1",
+    "ext-zip": "*"
   },
   "require-dev": {
     "codeception/codeception": "^3.1",

@@ -51,7 +51,7 @@ class ExpressPickup {
                 con la confirmación. Gracias!</p>';
          } else {
              $this->content = '<h3>Programada para fin de semana.</h3>
-            <p style="margin-bottom: 40px;">Para confirmar la disponibilidad y programar esta entrega, <a href="http://maspost-users.herokuapp.com/admin/confirm-express-pickup?id='.$this->expressId.'"> haz click aquí.</a>';
+            <p style="margin-bottom: 40px;">Para confirmar la disponibilidad y programar esta entrega, <a href="'.$_ENV["MASPOST_USERS_URL"].'/admin/confirm-express-pickup?id='.$this->expressId.'"> haz click aquí.</a>';
          }
      }  else {
          $this->content = '<p style="margin-bottom: 40px;">Hemos recibido tu solicitud de entrega express. A continuación confirmamos los detalles de tu entrega.</p>';
