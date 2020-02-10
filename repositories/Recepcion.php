@@ -25,14 +25,14 @@ class Recepcion
 
         if (isset($queryData['status']) && $queryData['status'] === 'en_bodega') {
             $statusQuery = 'where fecha_entrega IS NULL AND id_salida = 0 ';
-            $orderByDate = 'fecha_recepcion DESC';
+            $orderByDate = 'recepcion.fecha_recepcion DESC';
         } else {
             if (isset($queryData['month']) || isset($queryData['year'])) {
                 if (!empty($queryData['month'])) {
                     $dateQuery .= ' AND DATE_FORMAT(fecha_entrega, "%m") = '. $queryData['month']. ' ';
                 }
 //
-                if (!empty($queryData['month'])) {
+                if (!empty($queryData['year'])) {
                     $dateQuery .= 'AND DATE_FORMAT(fecha_entrega, "%Y") = '.$queryData['year'].' ';
                 }
             } else {
@@ -46,7 +46,7 @@ class Recepcion
             $statusQuery = 'where fecha_entrega IS NOT NULL AND id_salida IS NOT NULL ';
         }
 
-        $columns = self::formatDate('recepcion.fecha_recepcion', 'fecha_recepcion').', recepcion.id as ID, recepcion.entrada as Entrada,'.$deliveryColumn.$pickUpDateColumn.' tipo_entradas.nombre AS tipo, recepcion.fromm as `remitente`, recepcion.nombre as `destinatario`,fleteras.nombre AS fletera, '. self::truncatedTrackingNumber().'  as `tracking`,recepcion.peso as `peso(lbs)`, CONCAT("$", recepcion.cod) as `COD`'.$pickupPerson;
+        $columns = self::formatDate('recepcion.fecha_recepcion', 'fechaRecepcion').', recepcion.id as ID, recepcion.entrada as Entrada,'.$deliveryColumn.$pickUpDateColumn.' tipo_entradas.nombre AS tipo, recepcion.fromm as `remitente`, recepcion.nombre as `destinatario`,fleteras.nombre AS fletera, '. self::truncatedTrackingNumber().'  as `tracking`,recepcion.peso as `peso(lbs)`, CONCAT("$", recepcion.cod) as `COD`'.$pickupPerson;
         $query = 'select '.$columns.'from recepcion join tipo_entradas on recepcion.tipo = tipo_entradas.id join fleteras on recepcion.fletera = fleteras.id left join salidas on recepcion.id_salida = salidas.id '.$statusQuery.$dateQuery.' AND recepcion.pmb = ' . $queryData['pmb'] . ' ORDER BY '.$orderByDate;
         //return json_encode($query);
 
