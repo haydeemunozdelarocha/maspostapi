@@ -39,7 +39,7 @@ class ConfirmExpressPickup {
     }
 
     function setContent() {
-        $this->content = '<p style="margin-bottom: 40px;">Hemos recibido tu solicitud de entrega express y si tenemos disponibilidad de horario. A continuación confirmamos los detalles de tu entrega en fin de semana. Te esperamos.</p>';
+        $this->content = '<p style="margin-bottom: 40px;">Hemos recibido tu solicitud de entrega express y si tenemos disponibilidad de horario. A continuación confirmamos los detalles de tu entrega en fin de semana. Para cancelar o reagendar tu cita, llámanos al <a style="display: inline;" href="tel:9153518160">915.351.8160</a>. Te esperamos.</p>';
     }
 
     function setTable() {
