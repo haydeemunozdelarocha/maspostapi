@@ -34,8 +34,8 @@ class CONFIRM extends ENDPOINT
             return $response->withStatus(400);
         }
 
-        $this->id = $parsedBody['id'];
         $this->dataToUpdate = $parsedBody['data'];
+        $this->dataToUpdate['id'] = $parsedBody['id'];
         return true;
     }
 
@@ -52,8 +52,8 @@ class CONFIRM extends ENDPOINT
             $email = Clientes::getClientInfo($updatedExpressPickup['paquetes'][0]['pmb'])['email'];
 
             $emailUser = new Email($email,
-                EmailHelpers::getSubject('confirm_entrega_express', $updatedExpressPickup),
-                EmailHelpers::getTemplate($updatedExpressPickup, 'confirm_entrega_express'));
+                EmailHelpers::getSubject('confirm_express_pickup', $updatedExpressPickup),
+                EmailHelpers::getTemplate($updatedExpressPickup, 'confirm_express_pickup'));
 
             if(!$emailUser->send())
             {

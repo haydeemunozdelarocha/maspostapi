@@ -22,8 +22,8 @@ class ConfirmExpressPickup {
         $this->pmb = $data['paquetes'][0]['pmb'];
         $this->packages = $data['paquetes'];
         $this->expressId = $data['express_id'];
-        $this->title = '<h1 style="padding-top:20px;">Confirmación de Entrega Expres</h1>';
-        $this->previewText = 'Confirmación: Entrega Express en Fin de Semana.';
+        $this->title = '<h1 style="padding-top:20px;">Confirmación de Entrega Expres en Fin de Semana</h1>';
+        $this->previewText = 'Confirmado: Entrega Express en Fin de Semana.';
 
         ConfirmExpressPickup::setContent();
         ConfirmExpressPickup::setTable();
@@ -39,7 +39,7 @@ class ConfirmExpressPickup {
     }
 
     function setContent() {
-        $this->content = '<p style="margin-bottom: 40px;">Hemos recibido tu solicitud de entrega express. A continuación confirmamos los detalles de tu entrega en fin de semana.</p>';
+        $this->content = '<p style="margin-bottom: 40px;">Hemos recibido tu solicitud de entrega express y si tenemos disponibilidad de horario. A continuación confirmamos los detalles de tu entrega en fin de semana. Te esperamos.</p>';
     }
 
     function setTable() {

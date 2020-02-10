@@ -52,6 +52,7 @@ class ExpressPickup
         }
 
         $query = 'UPDATE maspost.entrega_express SET '.substr($columnsToUpdate, 0, -1).' WHERE express_id = '.$dataToUpdate['id'];
+
         $insertPassword = $db->prepare($query);
         $insertPassword->execute();
 

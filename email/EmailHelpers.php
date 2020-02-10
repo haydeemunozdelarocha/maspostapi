@@ -23,7 +23,7 @@ class EmailHelpers {
                 $template = new ExpressPickup($data, $isAdmin);
                 return $template->getBody();
                 break;
-            case "confirm_entrega_express":
+            case "confirm_express_pickup":
                 $template = new ConfirmExpressPickup($data);
                 return $template->getBody();
                 break;
