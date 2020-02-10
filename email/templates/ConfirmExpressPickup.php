@@ -22,7 +22,7 @@ class ConfirmExpressPickup {
         $this->pmb = $data['paquetes'][0]['pmb'];
         $this->packages = $data['paquetes'];
         $this->expressId = $data['express_id'];
-        $this->title = '<h1 style="padding-top:20px;">Confirmación de Entrega Expres en Fin de Semana</h1>';
+        $this->title = '<h1 style="padding-top:20px;">Confirmación de Entrega Express en Fin de Semana</h1>';
         $this->previewText = 'Confirmado: Entrega Express en Fin de Semana.';
 
         ConfirmExpressPickup::setContent();
