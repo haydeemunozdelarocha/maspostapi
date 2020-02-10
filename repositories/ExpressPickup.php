@@ -23,7 +23,7 @@ class ExpressPickup
             while ($row = $result->fetch()) {
                 $data = $row;
             }
-            $recepcionQuery = 'SELECT recepcion.*, mensajes.mensaje as nombre_autorizado FROM recepcion LEFT JOIN mensajes ON mensajes.id_recepcion = recepcion.id WHERE recepcion.id IN (SELECT recepcion_id FROM maspost.express_recepcion where express_id='.$id.') LIMIT 1;';
+            $recepcionQuery = 'SELECT recepcion.*, mensajes.mensaje as nombre_autorizado FROM recepcion JOIN mensajes ON mensajes.id_recepcion = recepcion.id WHERE recepcion.id IN (SELECT recepcion_id FROM maspost.express_recepcion where express_id='.$id.') ORDER BY mensajes.fecha ASC LIMIT 1;';
             $getRecepcionIds = $db->query($recepcionQuery);
 
             if (!empty($getRecepcionIds)) {
